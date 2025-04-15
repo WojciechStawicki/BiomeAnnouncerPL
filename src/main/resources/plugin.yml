@@ -1,0 +1,13 @@
+name: BiomeAnnouncer
+version: 1.0
+main: com.yourname.biomeannouncer.BiomeAnnouncer
+api-version: 1.13
+commands:
+  togglebiomeannouncer:
+    description: Toggle biome announcements
+    usage: /<command>
+    permission: biomeannouncer.toggle
+permissions:
+  biomeannouncer.toggle:
+    description: Allows toggling biome announcements
+    default: true

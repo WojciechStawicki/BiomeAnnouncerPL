@@ -1,0 +1,84 @@
+# BiomeAnnouncer
+
+A Minecraft plugin that announces the biome players are in with animated titles and sound effects. Compatible with both vanilla Minecraft biomes and Terra biomes.
+
+## Features
+<<<<<<< HEAD
+=======
+
+>>>>>>> 89361198265797b7606ef2ac23032b8f422d26e3
+- Animated biome name announcements
+- Configurable sound effects
+- Support for both vanilla and Terra biomes
+- Toggle command for players
+- Customizable cooldown system
+- Per-world configuration
+
+## Commands
+<<<<<<< HEAD
+=======
+
+>>>>>>> 89361198265797b7606ef2ac23032b8f422d26e3
+- `/togglebiomeannouncer` - Toggles biome announcements on/off
+  - Permission: `biomeannouncer.toggle`
+
+## Configuration
+<<<<<<< HEAD
+=======
+
+>>>>>>> 89361198265797b7606ef2ac23032b8f422d26e3
+```yaml
+# Animation settings
+animation:
+  typing-speed: 3
+  sound:
+    enabled: true
+    volume: 0.3
+    pitch: 2.0
+
+# Cooldown settings
+cooldown:
+  duration: 3 # seconds
+
+# Messages
+messages:
+  prefix: "&8[&aBiomeAnnouncer&8] "
+  enabled: "&aEnabled biome announcements!"
+  disabled: "&cDisabled biome announcements!"
+  no-permission: "&cYou don't have permission to use this command!"
+
+# Worlds where the plugin is enabled
+enabled-worlds:
+  - "world"
+```
+
+## Installation
+<<<<<<< HEAD
+=======
+
+>>>>>>> 89361198265797b7606ef2ac23032b8f422d26e3
+1. Download the plugin JAR file
+2. Place it in your server's `plugins` folder
+3. Restart your server
+4. Configure the plugin in `plugins/BiomeAnnouncer/config.yml`
+
+## Permissions
+<<<<<<< HEAD
+- `biomeannouncer.toggle` - Allows players to toggle biome announcements
+
+## Support
+For issues and feature requests, please use the GitHub issues tab.
+
+## License
+=======
+
+- `biomeannouncer.toggle` - Allows players to toggle biome announcements
+
+## Support
+
+For issues and feature requests, please use the GitHub Issues tab.
+
+## License
+
+>>>>>>> 89361198265797b7606ef2ac23032b8f422d26e3
+This project is licensed under the MIT License - see the LICENSE file for details.
