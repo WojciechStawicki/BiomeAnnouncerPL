@@ -3,10 +3,6 @@
 A Minecraft plugin that announces the biome players are in with animated titles and sound effects. Compatible with both vanilla Minecraft biomes and Terra biomes.
 
 ## Features
-<<<<<<< HEAD
-=======
-
->>>>>>> 89361198265797b7606ef2ac23032b8f422d26e3
 - Animated biome name announcements
 - Configurable sound effects
 - Support for both vanilla and Terra biomes
@@ -15,18 +11,10 @@ A Minecraft plugin that announces the biome players are in with animated titles 
 - Per-world configuration
 
 ## Commands
-<<<<<<< HEAD
-=======
-
->>>>>>> 89361198265797b7606ef2ac23032b8f422d26e3
 - `/togglebiomeannouncer` - Toggles biome announcements on/off
   - Permission: `biomeannouncer.toggle`
 
 ## Configuration
-<<<<<<< HEAD
-=======
-
->>>>>>> 89361198265797b7606ef2ac23032b8f422d26e3
 ```yaml
 # Animation settings
 animation:
@@ -53,32 +41,16 @@ enabled-worlds:
 ```
 
 ## Installation
-<<<<<<< HEAD
-=======
-
->>>>>>> 89361198265797b7606ef2ac23032b8f422d26e3
 1. Download the plugin JAR file
 2. Place it in your server's `plugins` folder
 3. Restart your server
 4. Configure the plugin in `plugins/BiomeAnnouncer/config.yml`
 
 ## Permissions
-<<<<<<< HEAD
 - `biomeannouncer.toggle` - Allows players to toggle biome announcements
 
 ## Support
-For issues and feature requests, please use the GitHub issues tab.
+For issues and feature requests, please join our [Discord server](https://discord.primalmc.fun/) or use the GitHub Issues tab.
 
 ## License
-=======
-
-- `biomeannouncer.toggle` - Allows players to toggle biome announcements
-
-## Support
-
-For issues and feature requests, please use the GitHub Issues tab.
-
-## License
-
->>>>>>> 89361198265797b7606ef2ac23032b8f422d26e3
 This project is licensed under the MIT License - see the LICENSE file for details.
