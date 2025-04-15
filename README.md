@@ -10,7 +10,7 @@ A Minecraft plugin that announces the biome players are in with animated titles 
 - Customizable cooldown system
 - Per-world configuration
 
-## Commands
+## Commands & Permissions
 - `/togglebiomeannouncer` - Toggles biome announcements on/off
   - Permission: `biomeannouncer.toggle`
 
@@ -45,9 +45,6 @@ enabled-worlds:
 2. Place it in your server's `plugins` folder
 3. Restart your server
 4. Configure the plugin in `plugins/BiomeAnnouncer/config.yml`
-
-## Permissions
-- `biomeannouncer.toggle` - Allows players to toggle biome announcements
 
 ## Support
 For issues and feature requests, please join our [Discord server](https://discord.primalmc.fun/) or use the GitHub Issues tab.
