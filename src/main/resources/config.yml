@@ -1,0 +1,34 @@
+# BiomeAnnouncer Configuration
+
+# Animation Settings
+animation:
+  # How fast the text appears (in ticks, lower = faster)
+  # 2 = very fast, 3 = normal, 4 = slow
+  typing-speed: 3
+
+  # Sound played while typing
+  sound:
+    # Set to false to disable the typing sound
+    enabled: true
+    # Volume of the sound (0.0 - 1.0)
+    volume: 0.3
+    # Pitch of the sound (0.5 - 2.0)
+    pitch: 2.0
+
+# Cooldown Settings
+cooldown:
+  # How long to wait before showing another biome announcement (in seconds)
+  duration: 3
+
+# Messages
+messages:
+  prefix: "&8[&aBiome&8]&r"
+  enabled: "&a Biome announcements enabled!"
+  disabled: "&c Biome announcements disabled!"
+  no-permission: "&cYou don't have permission to use this command!"
+
+# Worlds where the plugin will work
+enabled-worlds:
+  - "world"
+
+# Join our discord server if you need any help - https://discord.gg/primalmc
