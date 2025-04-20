@@ -26,7 +26,11 @@ replay_pid*
 # IDE-specific files
 .idea/
 *.iml
+*.iws
+*.ipr
 .vscode/
+*.swp
+*.swo
 .settings/
 .classpath
 .project
@@ -41,15 +45,6 @@ release.properties
 dependency-reduced-pom.xml
 buildNumber.properties
 .mvn/timing.properties
-
-# IDE specific files
-.idea/
-*.iml
-*.iws
-*.ipr
-.vscode/
-*.swp
-*.swo
 
 # OS specific files
 .DS_Store
