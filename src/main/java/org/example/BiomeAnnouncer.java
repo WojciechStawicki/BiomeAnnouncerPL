@@ -6,6 +6,7 @@ import org.bstats.bukkit.Metrics;
 public class BiomeAnnouncer extends JavaPlugin {
     private static BiomeAnnouncer instance;
     private BiomeChecker biomeChecker;
+    private UpdateChecker updateChecker;
 
     @Override
     public void onEnable() {
@@ -15,7 +16,7 @@ public class BiomeAnnouncer extends JavaPlugin {
         int pluginId = 25547;
         getLogger().info("Initializing bStats with plugin ID: " + pluginId);
         try {
-            Metrics metrics = new Metrics(this, pluginId);
+            new Metrics(this, pluginId);
             getLogger().info("bStats Metrics has been enabled!");
         } catch (Exception e) {
             getLogger().warning("Failed to initialize bStats: " + e.getMessage());
@@ -31,6 +32,10 @@ public class BiomeAnnouncer extends JavaPlugin {
         // Register biome checker task
         this.biomeChecker = new BiomeChecker(this);
         this.biomeChecker.runTaskTimer(this, 20L, 20L);
+
+        // Initialize update checker
+        this.updateChecker = new UpdateChecker(this);
+        this.updateChecker.checkForUpdates();
 
         getLogger().info("BiomeAnnouncer has been enabled!");
     }
