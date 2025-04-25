@@ -1,5 +1,10 @@
 # BiomeAnnouncer Configuration
 
+# Update Checker Settings
+update-checker:
+  # Set to false to disable update checking
+  enabled: true
+
 # Animation Settings
 animation:
   # How fast the text appears (in ticks, lower = faster)

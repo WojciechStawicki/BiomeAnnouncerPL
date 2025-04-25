@@ -33,9 +33,11 @@ public class BiomeAnnouncer extends JavaPlugin {
         this.biomeChecker = new BiomeChecker(this);
         this.biomeChecker.runTaskTimer(this, 20L, 20L);
 
-        // Initialize update checker
-        this.updateChecker = new UpdateChecker(this);
-        this.updateChecker.checkForUpdates();
+        // Initialize update checker if enabled
+        if (getConfig().getBoolean("update-checker.enabled", true)) {
+            this.updateChecker = new UpdateChecker(this);
+            this.updateChecker.checkForUpdates();
+        }
 
         getLogger().info("BiomeAnnouncer has been enabled!");
     }
