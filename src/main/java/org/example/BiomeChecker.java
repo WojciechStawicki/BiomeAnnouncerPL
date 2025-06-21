@@ -3,16 +3,32 @@ package org.example;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
+import org.bukkit.configuration.file.YamlConfiguration;
+
 import java.util.*;
+import java.io.File;
 
 public class BiomeChecker extends BukkitRunnable {
     private final BiomeAnnouncer plugin;
     private final Map<UUID, String> lastBiome = new HashMap<>();
     private final Map<UUID, Long> lastAnnounce = new HashMap<>();
     private final Map<UUID, Boolean> announcerEnabled = new HashMap<>();
+    private YamlConfiguration biomeLang;
 
     public BiomeChecker(BiomeAnnouncer plugin) {
         this.plugin = plugin;
+        loadBiomeTranslations();
+    }
+
+    private void loadBiomeTranslations() {
+        try {
+            File langFile = new File(plugin.getDataFolder(), "lang/pl_PL.yml");
+            if (langFile.exists()) {
+                biomeLang = YamlConfiguration.loadConfiguration(langFile);
+            }
+        } catch (Exception e) {
+            plugin.getLogger().warning("Could not load biome translations: " + e.getMessage());
+        }
     }
 
     @Override
@@ -40,57 +56,39 @@ public class BiomeChecker extends BukkitRunnable {
     }
 
     private String formatBiomeName(String biome) {
-        // Convert to lowercase first
-        String formatted = biome.toLowerCase();
+        String namespace = "minecraft";
+        String name = biome.toLowerCase();
 
-        // Handle Terra biomes
-        if (formatted.startsWith("terra:")) {
-            // Split by '/' and get the last part which contains the actual biome name
-            String[] parts = formatted.split("/");
-            formatted = parts[parts.length - 1];
+        if (biome.contains(":")) {
+            String[] parts = biome.toLowerCase().split(":");
+            if (parts.length == 2) {
+                namespace = parts[0];
+                name = parts[1];
+            }
         }
-        // Handle Terralith biomes
-        if (formatted.startsWith("terralith:")) {
-            // Split by '/' and get the last part which contains the actual biome name
-            String[] parts = formatted.split("/");
-            formatted = parts[parts.length - 1];
-        }
-        // Handle Incendium biomes
-        if (formatted.startsWith("incendium:")) {
-            // Split by '/' and get the last part which contains the actual biome name
-            String[] parts = formatted.split("/");
-            formatted = parts[parts.length - 1];
-        }
-        // Handle Nullscape biomes
-        if (formatted.startsWith("nullscape:")) {
-            // Split by '/' and get the last part which contains the actual biome name
-            String[] parts = formatted.split("/");
-            formatted = parts[parts.length - 1];
-        }
-        
 
-        // Remove any remaining prefixes
-        formatted = formatted.replace("terra:", "")
-                .replace("terralith:", "")
-                .replace("incendium:", "")
-                .replace("nullscape:", "")
-                .replace("minecraft:", "")
-                .replace("_", " ");
+        if (biomeLang != null) {
+            String path = "biome." + namespace + "." + name;
+            String translation = biomeLang.getString(path);
+            plugin.getLogger().info("[BiomeAnnouncerPL] Looking up: " + path + " -> " + translation);
+            if (translation != null) {
+                return translation;
+            }
+        }
 
-        // Capitalize each word
+        // fallback: prettify
+        String formatted = name.replace("_", " ");
         String[] words = formatted.split(" ");
         StringBuilder result = new StringBuilder();
-
         for (int i = 0; i < words.length; i++) {
             if (words[i].length() > 0) {
                 result.append(Character.toUpperCase(words[i].charAt(0)))
-                        .append(words[i].substring(1));
+                      .append(words[i].substring(1));
                 if (i < words.length - 1) {
                     result.append(" ");
                 }
             }
         }
-
         return result.toString();
     }
 
