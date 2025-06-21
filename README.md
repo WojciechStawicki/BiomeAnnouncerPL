@@ -12,6 +12,7 @@ A Minecraft plugin that announces the biome players are in with animated titles 
 
 ## Fork changes
  - added support to Terralith / Incendium / Nullscape
+ - changed from title to actionbar
 
 ## Later plans
  - change language to Polish
