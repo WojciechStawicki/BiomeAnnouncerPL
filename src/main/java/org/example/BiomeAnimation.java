@@ -1,6 +1,8 @@
 package org.example;
 
 import net.md_5.bungee.api.ChatColor;
+import net.md_5.bungee.api.chat.TextComponent;
+import net.md_5.bungee.api.ChatMessageType;
 import org.bukkit.Sound;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
@@ -23,7 +25,9 @@ public class BiomeAnimation extends BukkitRunnable {
     @Override
     public void run() {
         if (currentChar >= chars.length) {
-            player.sendTitle("", ChatColor.WHITE + biomeName, 0, 40, 20);
+            String colorCode = plugin.getConfig().getString("animation.color", "&f");
+            String coloredText = ChatColor.translateAlternateColorCodes('&', colorCode + biomeName);
+            player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(coloredText));
             cancel();
             return;
         }
@@ -34,6 +38,8 @@ public class BiomeAnimation extends BukkitRunnable {
                     (float) plugin.getConfig().getDouble("animation.sound.volume"),
                     (float) plugin.getConfig().getDouble("animation.sound.pitch"));
         }
-        player.sendTitle("", ChatColor.WHITE + display.toString(), 0, 20, 0);
+        String colorCode = plugin.getConfig().getString("animation.color", "&f");
+        String coloredText = ChatColor.translateAlternateColorCodes('&', colorCode + display.toString());
+        player.spigot().sendMessage(ChatMessageType.ACTION_BAR, new TextComponent(coloredText));
     }
 }

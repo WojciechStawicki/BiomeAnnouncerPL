@@ -11,10 +11,13 @@ animation:
   # 2 = very fast, 3 = normal, 4 = slow
   typing-speed: 3
 
+  # text color
+  color: "&a"
+  
   # Sound played while typing
   sound:
     # Set to false to disable the typing sound
-    enabled: true
+    enabled: false
     # Volume of the sound (0.0 - 1.0)
     volume: 0.3
     # Pitch of the sound (0.5 - 2.0)
@@ -36,6 +39,6 @@ messages:
 enabled-worlds:
   - "world"
   - "world_nether"
-  - "world_end""
+  - "world_the_end"
 
 # Join our discord server if you need any help - https://discord.gg/primalmc

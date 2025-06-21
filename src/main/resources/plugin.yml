@@ -1,5 +1,5 @@
 name: BiomeAnnouncer
-version: 1.3
+version: 1.0
 main: org.example.BiomeAnnouncer
 api-version: 1.13
 commands:
