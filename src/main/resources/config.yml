@@ -23,7 +23,7 @@ animation:
 # Cooldown Settings
 cooldown:
   # How long to wait before showing another biome announcement (in seconds)
-  duration: 3
+  duration: 3 # seconds
 
 # Messages
 messages:
@@ -35,5 +35,7 @@ messages:
 # Worlds where the plugin will work
 enabled-worlds:
   - "world"
+  - "world_nether"
+  - "world_end""
 
 # Join our discord server if you need any help - https://discord.gg/primalmc
