@@ -13,7 +13,7 @@ animation:
 
   # text color
   color: "&a"
-  
+
   # Sound played while typing
   sound:
     # Set to false to disable the typing sound
@@ -40,5 +40,3 @@ enabled-worlds:
   - "world"
   - "world_nether"
   - "world_the_end"
-
-# Join our discord server if you need any help - https://discord.gg/primalmc

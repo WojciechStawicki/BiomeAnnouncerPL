@@ -34,7 +34,7 @@ public class UpdateChecker implements Listener {
         }
 
         try {
-            URL url = new URL("https://api.github.com/repos/shpellar/BiomeAnnouncer/releases/latest");
+            URL url = new URL("https://api.github.com/repos/WojciechStawicki/BiomeAnnouncerPL/releases/latest");
             HttpURLConnection connection = (HttpURLConnection) url.openConnection();
             connection.setRequestMethod("GET");
             connection.setRequestProperty("Accept", "application/vnd.github.v3+json");
@@ -59,17 +59,17 @@ public class UpdateChecker implements Listener {
                     updateAvailable = !currentVersion.equals(latestVersion);
 
                     if (updateAvailable) {
-                        Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "[BiomeAnnouncer] A new update is available!");
-                        Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "Current version: " + currentVersion);
-                        Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "Latest version: " + latestVersion);
-                        Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "Download: https://modrinth.com/plugin/biomeannouncer/version/" + latestVersion);
+                        Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "[BiomeAnnouncerPL] Dostępna jest nowa aktualizacja!");
+                        Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "Aktualna wersja: " + currentVersion);
+                        Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "Najnowsza wersja: " + latestVersion);
+                        Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "Pobierz: https://github.com/WojciechStawicki/BiomeAnnouncerPL/releases/latest");
                     } else {
-                        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[BiomeAnnouncer] You are running the latest version!");
+                        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[BiomeAnnouncerPL] Korzystasz z najnowszej wersji!");
                     }
                 }
             }
         } catch (IOException e) {
-            plugin.getLogger().warning("Failed to check for updates: " + e.getMessage());
+            plugin.getLogger().warning("Nie udało się sprawdzić aktualizacji: " + e.getMessage());
         }
     }
 
@@ -78,10 +78,10 @@ public class UpdateChecker implements Listener {
         Player player = event.getPlayer();
         if (updateAvailable && player.hasPermission("biomeannouncer.admin")) {
             Bukkit.getScheduler().runTaskLater(plugin, () -> {
-                player.sendMessage(ChatColor.YELLOW + "[BiomeAnnouncer] A new update is available!");
-                player.sendMessage(ChatColor.YELLOW + "Current version: " + currentVersion);
-                player.sendMessage(ChatColor.YELLOW + "Latest version: " + latestVersion);
-                player.sendMessage(ChatColor.YELLOW + "Download: https://modrinth.com/plugin/biomeannouncer/version/" + latestVersion);
+                player.sendMessage(ChatColor.YELLOW + "[BiomeAnnouncerPL] Dostępna jest nowa aktualizacja!!");
+                player.sendMessage(ChatColor.YELLOW + "Aktualna wersja: " + currentVersion);
+                player.sendMessage(ChatColor.YELLOW + "Najnowsza wersja: " + latestVersion);
+                player.sendMessage(ChatColor.YELLOW + "Download: https://github.com/WojciechStawicki/BiomeAnnouncerPL/releases/latest");
             }, 40L);
         }
     }

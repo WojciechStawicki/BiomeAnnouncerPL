@@ -11,7 +11,7 @@ A Minecraft plugin that announces the biome players are in with animated titles 
 - Per-world configuration
 
 ## Fork changes
- - added support to Terralith / Incendium / Nullscape (WIP)
+ - added support to Terralith / Incendium / Nullscape
 
 ## Later plans
  - change language to Polish
@@ -26,6 +26,7 @@ A Minecraft plugin that announces the biome players are in with animated titles 
 # Animation settings
 animation:
   typing-speed: 3
+  color: "&b"
   sound:
     enabled: true
     volume: 0.3
@@ -54,7 +55,7 @@ enabled-worlds:
 4. Configure the plugin in `plugins/BiomeAnnouncer/config.yml`
 
 ## Support
-For issues and feature requests, please join our [Discord server](https://discord.primalmc.fun/) or use the GitHub Issues tab.
+For issues and feature requests use the GitHub Issues tab.
 
 ## License
 This project is licensed under the MIT License - see the LICENSE file for details.
