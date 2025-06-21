@@ -49,9 +49,31 @@ public class BiomeChecker extends BukkitRunnable {
             String[] parts = formatted.split("/");
             formatted = parts[parts.length - 1];
         }
+        // Handle Terralith biomes
+        if (formatted.startsWith("terralith:")) {
+            // Split by '/' and get the last part which contains the actual biome name
+            String[] parts = formatted.split("/");
+            formatted = parts[parts.length - 1];
+        }
+        // Handle Incendium biomes
+        if (formatted.startsWith("incendium:")) {
+            // Split by '/' and get the last part which contains the actual biome name
+            String[] parts = formatted.split("/");
+            formatted = parts[parts.length - 1];
+        }
+        // Handle Nullscape biomes
+        if (formatted.startsWith("nullscape:")) {
+            // Split by '/' and get the last part which contains the actual biome name
+            String[] parts = formatted.split("/");
+            formatted = parts[parts.length - 1];
+        }
+        
 
         // Remove any remaining prefixes
         formatted = formatted.replace("terra:", "")
+                .replace("terralith:", "")
+                .replace("incendium:", "")
+                .replace("nullscape:", "")
                 .replace("minecraft:", "")
                 .replace("_", " ");
 
