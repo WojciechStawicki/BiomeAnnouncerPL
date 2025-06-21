@@ -10,6 +10,13 @@ A Minecraft plugin that announces the biome players are in with animated titles 
 - Customizable cooldown system
 - Per-world configuration
 
+## Fork changes
+ - added support to Terralith / Incendium / Nullscape (WIP)
+
+## Later plans
+ - change language to Polish
+
+
 ## Commands & Permissions
 - `/togglebiomeannouncer` - Toggles biome announcements on/off
   - Permission: `biomeannouncer.toggle`
