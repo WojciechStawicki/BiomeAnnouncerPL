@@ -26,8 +26,7 @@ animation:
 # Cooldown Settings
 cooldown:
   # How long to wait before showing another biome announcement (in seconds)
-  duration: 3 # seconds
-
+  duration: 3
 # Messages
 messages:
   prefix: "&8[&aBiome&8]&r"
@@ -40,3 +39,8 @@ enabled-worlds:
   - "world"
   - "world_nether"
   - "world_the_end"
+
+# language
+# change to your language file
+# make sure the file is in /lang/
+language: "pl_PL"
