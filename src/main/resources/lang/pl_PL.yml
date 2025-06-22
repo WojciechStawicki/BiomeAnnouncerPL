@@ -155,6 +155,19 @@ biome:
     yellowstone: "Yellowstone"
     yosemite_cliffs: "Klify yosemite"
     yosemite_lowlands: "Niziny yosemite"
+    
+    cave:
+      fungal_caves: "Grzybowe jaskinie"
+      infested_caves: "Zainfekowane jaskinie"
+      frostfire_caves: "Jaskinie mroźnego ognia"
+      mantle_caves: "Jaskinie płaszcza"
+      andesite_caves: "Jaskinie andezytowe"
+      deep_caves: "Głębokie jaskinie"
+      diorite_caves: "Jaskinie diorytowe"
+      granite_caves: "Granitowe jaskinie"
+      thermal_caves: "Jaskinie termiczne"
+      tuff_caves: "Jaskinie tufowe"
+      underground_jungle: "Podziemna dżungla"
 
   # incendium
   incendium:

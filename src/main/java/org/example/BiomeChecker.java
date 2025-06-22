@@ -22,7 +22,9 @@ public class BiomeChecker extends BukkitRunnable {
 
     private void loadBiomeTranslations() {
         try {
-            File langFile = new File(plugin.getDataFolder(), "lang/pl_PL.yml");
+            String lang = plugin.getConfig().getString("language", "pl_PL");
+            File langFile = new File(plugin.getDataFolder(), "lang/" + lang + ".yml");
+            plugin.getLogger().info("Loaded file: " + langFile.getAbsolutePath());
             if (langFile.exists()) {
                 biomeLang = YamlConfiguration.loadConfiguration(langFile);
             }
@@ -67,17 +69,19 @@ public class BiomeChecker extends BukkitRunnable {
             }
         }
 
+        // Replace slashes with dots for nested YAML lookup
+        String yamlName = name.replace("/", ".");
+
         if (biomeLang != null) {
-            String path = "biome." + namespace + "." + name;
+            String path = "biome." + namespace + "." + yamlName;
             String translation = biomeLang.getString(path);
-            plugin.getLogger().info("[BiomeAnnouncerPL] Looking up: " + path + " -> " + translation);
             if (translation != null) {
                 return translation;
             }
         }
 
         // fallback: prettify
-        String formatted = name.replace("_", " ");
+        String formatted = name.replace("_", " ").replace("/", " ");
         String[] words = formatted.split(" ");
         StringBuilder result = new StringBuilder();
         for (int i = 0; i < words.length; i++) {
