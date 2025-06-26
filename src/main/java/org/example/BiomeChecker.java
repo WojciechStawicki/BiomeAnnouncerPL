@@ -24,7 +24,6 @@ public class BiomeChecker extends BukkitRunnable {
         try {
             String lang = plugin.getConfig().getString("language", "pl_PL");
             File langFile = new File(plugin.getDataFolder(), "lang/" + lang + ".yml");
-            plugin.getLogger().info("Loaded file: " + langFile.getAbsolutePath());
             if (langFile.exists()) {
                 biomeLang = YamlConfiguration.loadConfiguration(langFile);
             }

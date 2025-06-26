@@ -26,8 +26,11 @@ public class BiomeAnnouncer extends JavaPlugin {
         // Save default config
         saveDefaultConfig();
 
-        // Save Polish biome translations if not present
-        saveResource("lang/pl_PL.yml", false);
+        // Save Polish (default) biome translations if not present
+        java.io.File langFile = new java.io.File(getDataFolder(), "lang/pl_PL.yml");
+        if (!langFile.exists()) {
+            saveResource("lang/pl_PL.yml", false);
+        }
 
         // Register command
         getCommand("togglebiomeannouncer").setExecutor(new ToggleCommand());

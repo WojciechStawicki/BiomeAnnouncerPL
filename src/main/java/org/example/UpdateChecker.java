@@ -59,12 +59,12 @@ public class UpdateChecker implements Listener {
                     updateAvailable = !currentVersion.equals(latestVersion);
 
                     if (updateAvailable) {
-                        Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "[BiomeAnnouncerPL] Dostępna jest nowa aktualizacja!");
-                        Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "Aktualna wersja: " + currentVersion);
-                        Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "Najnowsza wersja: " + latestVersion);
-                        Bukkit.getConsoleSender().sendMessage(ChatColor.YELLOW + "Pobierz: https://github.com/WojciechStawicki/BiomeAnnouncerPL/releases/latest");
+                        Bukkit.getConsoleSender().sendMessage("[BiomeAnnouncerPL] Dostępna jest nowa aktualizacja!");
+                        Bukkit.getConsoleSender().sendMessage("Aktualna wersja: " + currentVersion);
+                        Bukkit.getConsoleSender().sendMessage("Najnowsza wersja: " + latestVersion);
+                        Bukkit.getConsoleSender().sendMessage("Pobierz: https://github.com/WojciechStawicki/BiomeAnnouncerPL/releases/latest");
                     } else {
-                        Bukkit.getConsoleSender().sendMessage(ChatColor.GREEN + "[BiomeAnnouncerPL] Korzystasz z najnowszej wersji!");
+                        Bukkit.getConsoleSender().sendMessage("[BiomeAnnouncerPL] Korzystasz z najnowszej wersji!");
                     }
                 }
             }

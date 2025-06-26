@@ -36,11 +36,11 @@ messages:
 
 # Worlds where the plugin will work
 enabled-worlds:
-  - "world"
-  - "world_nether"
-  - "world_the_end"
+- "world"
+- "world_nether"
+- "world_the_end"
 
 # language
-# change to your language file
+# change to your language file (without yml)
 # make sure the file is in /lang/
 language: "pl_PL"
